@@ -6,12 +6,12 @@ Command Example: python3 scripts/membership/loadmember.py -i files/input -o file
 Legends
 - -i, --input: directory path for membership input files
 - -o, --output: directory path for membership output files
----
+
 ## Pre-Requisites and Assumptions
 - Installed Python 3.8.* ++ version on linux machine where this program shall be deployed.
 - Pre-defined Input and Output directories
 - Cron job to deploy as user instead of system
----
+
 ## Deployment
 Deploy this program by copying python program file to linux instance or machine. Detailed steps are as follows:
 - Identify <deploy-path>
@@ -23,6 +23,5 @@ Deploy this program by copying python program file to linux instance or machine.
     - Add entry "0 * * * * /usr/bin/python3 <deploy-path>/scripts/membership/loadmember.py -i <input> -o <output>"
     - If loadmember_schedule.sh is used, set <input> and <output> directories and save. Then execute chmod +x for loadmember_schedule.sh before executing.
     
----
 ### Output Files
 Processed output files are available at files/output/success and files/output/file directories.

@@ -4,7 +4,6 @@ The container will initialise with defined sale schema. Schema will include seve
 
 Imported membership applications (successful) will land in member_applications table first.
 Once data is imported, files will be moved to archive location.
----
 
 ## Setup Docker Postgres Container
 Docker image will preload with Sale db schema using sale-schema.sql. Upon docker run, the schema and tables will created.
