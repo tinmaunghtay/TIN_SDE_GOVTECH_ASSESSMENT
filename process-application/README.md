@@ -13,7 +13,8 @@ Legends
 - Cron job to deploy as user instead of system
 
 ## Deployment
-Deploy this program by copying python program file to linux instance or machine. Detailed steps are as follows:
+Deploy this program by copying python program file to linux instance or machine. 
+Detailed steps are as follows:
 - Identify <deploy-path>
 - Copy scripts/membership/loadmember.py into <deploy-path>
 - Identify which input directory to read files as to provide as -i <input>

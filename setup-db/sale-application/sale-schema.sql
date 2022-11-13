@@ -203,6 +203,44 @@ ALTER TABLE ONLY sale
 ALTER TABLE ONLY sale
     ADD CONSTRAINT user_role_fk FOREIGN KEY (user_role_id) REFERENCES user_role(id);
 
+CREATE ROLE logistics;
+
+GRANT SELECT (id,sale_status_id, total_item_weight), UPDATE (sale_status_id, total_item_weight) ON sale TO logistics;
+
+GRANT SELECT ON product_sale_item TO logistics;
+
+GRANT SELECT ON product TO logistics;
+
+GRANT SELECT ON sale_status TO logistics;
+
+GRANT SELECT ON stock TO logistics;
+
+CREATE ROLE anlysts;
+
+GRANT SELECT ON sale TO anlysts;
+
+GRANT SELECT ON product_sale_item TO anlysts;
+
+GRANT SELECT ON product TO anlysts;
+
+GRANT SELECT ON sale_status TO anlysts;
+
+GRANT SELECT ON stock TO anlysts;
+
+CREATE ROLE sale;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON sale TO sale;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON product_sale_item TO sale;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON product TO sale;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON sale_status TO sale;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON stock TO sale;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON manufacturer TO sale;
+
 COMMIT;
 
 ANALYZE role;
@@ -216,4 +254,3 @@ ANALYZE product;
 ANALYZE product_sale_item;
 ANALYZE sale;
 ANALYZE sale_status;
-
