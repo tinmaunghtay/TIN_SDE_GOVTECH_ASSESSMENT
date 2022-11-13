@@ -1,5 +1,4 @@
 # Process Membership Application Program
----
 This program is to be executed as a standalone scheduler job. It will run hourly to process membership applications. The program exports successful and fail applications into separate output directories. It uses default python libraries only.
 
 Command Example: python3 scripts/membership/loadmember.py -i files/input -o files/output
